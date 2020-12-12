@@ -57,7 +57,8 @@ function menorAmayor(Pedidos2, NombrePuntos2, Puntos2) {
                 j++;
             }
         } while (j < Pedidos2.length);
-        i++, j = i + 1;
+        i++;
+        j = i + 1;
     } while (i < Pedidos2.length);
     console.log(Pedidos2);
     console.log(NombrePuntos2);
@@ -83,7 +84,8 @@ function main(Pedidos_1, NombrePuntos_1, Puntos_1) {
             ingreso.push(hip);
             j++;
         } while (j < Puntos1.length);
-        ñ++, j = 0;
+        ñ++;
+        j = 0;
         CaminosPP.push(ingreso);
         ingreso = [];
     } while (ñ < Puntos1.length);
@@ -150,18 +152,22 @@ function main(Pedidos_1, NombrePuntos_1, Puntos_1) {
                 elMenor = [];
                 h++;
                 if (h > Puntos1.length) {
-                    h = 0, m++;
+                    h = 0;
+                    m++;
                 }
             } else {
                 h++;
                 if (h > Puntos1.length) {
-                    h = 0, m++;
+                    h = 0;
+                    m++;
                 }
             }
         } while (m < Camiones[q].length);
         Rutas.push(datos);
         datos = [];
-        q++, h = 0, m = 0;
+        q++;
+        h = 0;
+        m = 0;
     } while (q < Camiones.length);
 
     console.log(Rutas);
@@ -226,7 +232,8 @@ function main(Pedidos_1, NombrePuntos_1, Puntos_1) {
                 }
                 tramo.push(CaminosPP[primer][segundo]);
                 tramo.push(puntosA[lh]);
-                nq++, lh = nq + 1;
+                nq++;
+                lh = nq + 1;
             } while (lh < puntosA.length);
 
             for (var i = 0; i < NombrePuntos1.length; i++) {
