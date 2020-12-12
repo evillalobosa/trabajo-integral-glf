@@ -1,6 +1,9 @@
 var Puntos = [[1, -6], [-15, 35], [90, 8], [7, 7], [11, -8]];
 var Centros = [[0, 1], [41, 36], [1, 8]];
-var Pedidos = [700, 550, 990, 740, 850];
+var Pedidos = [700, 50, 990, 740, 850];
+
+var TamPunt = Puntos.length;
+console.log(TamPunt);
 
 var Estacionamiento = [0, 0];
 
@@ -31,13 +34,24 @@ function menorAmayor(Pedidos2, NombrePuntos2, Puntos2) {
     do {
         do {
             if (Pedidos2[i] > Pedidos2[j]) {
-                puente1 = Pedidos2[i], puente2 = Pedidos2[j];
-                puente3 = NombrePuntos2[i], puente4 = NombrePuntos2[j];
-                puente5 = Puntos2[i], puente6 = Puntos2[j];
-                Pedidos2.splice(i, 1, puente2), Pedidos2.splice(j, 1, puente1);
-                NombrePuntos2.splice(i, 1, puente4), NombrePuntos2.splice(j, 1, puente3);
-                Puntos2.splice(i, 1, puente6), Puntos2.splice(j, 1, puente5);
-                puente1 = [], puente3 = [], puente2 = [], puente4 = [], puente5 = [], puente6 = [];
+                puente1 = Pedidos2[i];
+                puente2 = Pedidos2[j];
+                puente3 = NombrePuntos2[i];
+                puente4 = NombrePuntos2[j];
+                puente5 = Puntos2[i];
+                puente6 = Puntos2[j];
+                Pedidos2.splice(i, 1, puente2);
+                Pedidos2.splice(j, 1, puente1);
+                NombrePuntos2.splice(i, 1, puente4);
+                NombrePuntos2.splice(j, 1, puente3);
+                Puntos2.splice(i, 1, puente6);
+                Puntos2.splice(j, 1, puente5);
+                puente1 = [];
+                puente3 = [];
+                puente2 = [];
+                puente4 = [];
+                puente5 = [];
+                puente6 = [];
                 j = i + 1;
             } else {
                 j++;
@@ -45,15 +59,17 @@ function menorAmayor(Pedidos2, NombrePuntos2, Puntos2) {
         } while (j < Pedidos2.length);
         i++, j = i + 1;
     } while (i < Pedidos2.length);
-    console.log(Pedidos2); console.log(NombrePuntos2); console.log(Puntos2);
+    console.log(Pedidos2);
+    console.log(NombrePuntos2);
+    console.log(Puntos2);
 
     return [Pedidos2, NombrePuntos2, Puntos2];
 
 }
 
 
-function main(Pedidos, NombrePuntos, Puntos) {
-    var [Pedidos1, NombrePuntos1, Puntos1] = menorAmayor(Pedidos, NombrePuntos, Puntos);
+function main(Pedidos_1, NombrePuntos_1, Puntos_1) {
+    var [Pedidos1, NombrePuntos1, Puntos1] = menorAmayor(Pedidos_1, NombrePuntos_1, Puntos_1);
     var CaminosEP = [];
     for (var o = 0; o < Puntos1.length; o++) {
         var hip = parseFloat(Math.sqrt((Math.pow(Estacionamiento[1] - Puntos1[o][1], 2)) + (Math.pow(Estacionamiento[0] - Puntos1[o][0], 2))).toFixed(5));
@@ -165,13 +181,24 @@ function main(Pedidos, NombrePuntos, Puntos) {
             do {
                 do {
                     if (caminosA[qm] >= caminosA[es]) {
-                        bridgeA = centrosA[qm], bridgeB = centrosA[es];
-                        bridgeC = caminosA[qm], bridgeD = caminosA[es];
-                        bridgeE = puntosA[qm], bridgeF = puntosA[es];
-                        centrosA.splice(qm, 1, bridgeB), centrosA.splice(es, 1, bridgeA);
-                        caminosA.splice(qm, 1, bridgeD), caminosA.splice(es, 1, bridgeC);
-                        puntosA.splice(qm, 1, bridgeF), puntosA.splice(es, 1, bridgeE);
-                        bridgeA = [], bridgeB = [], bridgeC = [], bridgeD = [], bridgeE = [], bridgeF = [];
+                        bridgeA = centrosA[qm];
+                        bridgeB = centrosA[es];
+                        bridgeC = caminosA[qm];
+                        bridgeD = caminosA[es];
+                        bridgeE = puntosA[qm];
+                        bridgeF = puntosA[es];
+                        centrosA.splice(qm, 1, bridgeB);
+                        centrosA.splice(es, 1, bridgeA);
+                        caminosA.splice(qm, 1, bridgeD);
+                        caminosA.splice(es, 1, bridgeC);
+                        puntosA.splice(qm, 1, bridgeF);
+                        puntosA.splice(es, 1, bridgeE);
+                        bridgeA = [];
+                        bridgeB = [];
+                        bridgeC = [];
+                        bridgeD = [];
+                        bridgeE = [];
+                        bridgeF = [];
                         es = qm + 1;
                     } else {
                         es++;
@@ -235,9 +262,12 @@ function main(Pedidos, NombrePuntos, Puntos) {
         aquello = CaminosEC[aqui];
         Rutas[k][0].splice(0, 0, aquello);
         Rutas[k][0].splice(0, 0, esto);
+        Rutas[k][0].push(esto);
         k++
     } while (k < Rutas.length);
 
+    var TamRutas = Rutas.length;
+    console.log(TamRutas);
     console.log(Rutas);
 
 }
