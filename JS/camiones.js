@@ -77,58 +77,58 @@ function main(Pedidos_1, NombrePuntos_1, Puntos_1) {
         CaminosEP.push(hip);
     }
     console.log(CaminosEP);
-    var CaminosPP = [], ingreso = [], ñ = 0, j = 0;
+    var CaminosPP = [], ingreso_1 = [], ñ = 0, j = 0;
     do {
         do {
-            var hip = parseFloat(Math.sqrt((Math.pow(Puntos1[ñ][1] - Puntos1[j][1], 2)) + (Math.pow(Puntos1[ñ][0] - Puntos1[j][0], 2))).toFixed(5));
-            ingreso.push(hip);
+            var hip_1 = parseFloat(Math.sqrt((Math.pow(Puntos1[ñ][1] - Puntos1[j][1], 2)) + (Math.pow(Puntos1[ñ][0] - Puntos1[j][0], 2))).toFixed(5));
+            ingreso_1.push(hip_1);
             j++;
         } while (j < Puntos1.length);
         ñ++;
         j = 0;
-        CaminosPP.push(ingreso);
-        ingreso = [];
+        CaminosPP.push(ingreso_1);
+        ingreso_1 = [];
     } while (ñ < Puntos1.length);
-    CaminosPP
 
     var CaminosEC = [];
-    for (var o = 0; o < Centros.length; o++) {
-        var hip = parseFloat(Math.sqrt((Math.pow(Estacionamiento[1] - Centros[o][1], 2)) + (Math.pow(Estacionamiento[0] - Centros[o][0], 2))).toFixed(5));
-        CaminosEC.push(hip);
+    for (var o_1 = 0; o_1 < Centros.length; o_1++) {
+        var hip_2 = parseFloat(Math.sqrt((Math.pow(Estacionamiento[1] - Centros[o_1][1], 2)) + (Math.pow(Estacionamiento[0] - Centros[o_1][0], 2))).toFixed(5));
+        CaminosEC.push(hip_2);
     }
     console.log(CaminosEC);
 
-    var CaminosPC = [], ingreso = [], ñ = 0, j = 0;
+    var CaminosPC = [], ingreso_2 = [], ñ_1 = 0, j_1 = 0;
     do {
         do {
-            var hip = parseFloat(Math.sqrt((Math.pow(Puntos1[ñ][1] - Centros[j][1], 2)) + (Math.pow(Puntos1[ñ][0] - Centros[j][0], 2))).toFixed(5));
-            ingreso.push(hip);
-            j++;
-        } while (j < Centros.length);
-        ñ++, j = 0;
-        CaminosPC.push(ingreso);
-        ingreso = [];
-    } while (ñ < Puntos1.length);
+            var hip_3 = parseFloat(Math.sqrt((Math.pow(Puntos1[ñ_1][1] - Centros[j_1][1], 2)) + (Math.pow(Puntos1[ñ_1][0] - Centros[j_1][0], 2))).toFixed(5));
+            ingreso_2.push(hip_3);
+            j_1++;
+        } while (j_1 < Centros.length);
+        ñ_1++;
+        j_1 = 0;
+        CaminosPC.push(ingreso_2);
+        ingreso_2 = [];
+    } while (ñ_1 < Puntos1.length);
     console.log(CaminosPC);
 
-    var suma = 0, ñ = 0, guarda = [], Camiones = [], i = 0;
+    var suma = 0, ñ_8 = 0, guarda = [], Camiones = [], i = 0;
 
     do {
-        suma = suma + Pedidos1[ñ];
+        suma = suma + Pedidos1[ñ_8];
         console.log(suma);
-        guarda.push(NombrePuntos1[ñ]);
+        guarda.push(NombrePuntos1[ñ_8]);
         if (suma >= 1000) {
             guarda.pop();
             Camiones.push(guarda);
             guarda = [];
             suma = 0;
         } else {
-            ñ++;
+            ñ_8++;
         }
-        if (ñ == Pedidos1.length) {
+        if (ñ_8 == Pedidos1.length) {
             Camiones.push(guarda);
         }
-    } while (ñ < Pedidos1.length);
+    } while (ñ_8 < Pedidos1.length);
     console.log(Camiones);
     console.log(CaminosPC[1][0])
 
@@ -214,7 +214,6 @@ function main(Pedidos_1, NombrePuntos_1, Puntos_1) {
                 es = qm + 1;
             } while (qm < caminosA.length);
 
-            caminosA
             var tramo = [];
             tramo.push(centrosA[0]);
             tramo.push(caminosA[0]);
