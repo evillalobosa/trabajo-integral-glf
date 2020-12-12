@@ -220,12 +220,12 @@ function main(Pedidos_1, NombrePuntos_1, Puntos_1) {
             tramo.push(puntosA[0]);
             var nq = 0, lh = nq + 1, primer = 0, segundo = 0;
             do {
-                for (var i = 0; i < NombrePuntos1.length; i++) {
-                    if (puntosA[nq] == NombrePuntos1[i]) {
-                        primer = i;
+                for (var i_1 = 0; i_1 < NombrePuntos1.length; i_1++) {
+                    if (puntosA[nq] == NombrePuntos1[i_1]) {
+                        primer = i_1;
                     } else {
-                        if (puntosA[lh] == NombrePuntos1[i]) {
-                            segundo = i;
+                        if (puntosA[lh] == NombrePuntos1[i_1]) {
+                            segundo = i_1;
                         }
                     }
                 }
