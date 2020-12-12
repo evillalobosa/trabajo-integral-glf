@@ -10,8 +10,8 @@ var Estacionamiento = [0, 0];
 var NombrePuntos = op();
 function op() {
     var algo = [];
-    for (var i = 1; i < Puntos.length + 1; i++) {
-        var n = "P" + i;
+    for (var i_7 = 1; i_7 < Puntos.length + 1; i_7++) {
+        var n = "P" + i_7;
         algo.push(n);
     }
     return algo;
@@ -20,8 +20,8 @@ console.log(NombrePuntos);
 var NombreCentros = op2();
 function op2() {
     var algo = [];
-    for (var i = 1; i < Centros.length + 1; i++) {
-        var n = "C" + i;
+    for (var i_5 = 1; i_5 < Centros.length + 1; i_5++) {
+        var n = "C" + i_5;
         algo.push(n);
     }
     return algo;
@@ -111,7 +111,7 @@ function main(Pedidos_1, NombrePuntos_1, Puntos_1) {
     } while (ñ_1 < Puntos1.length);
     console.log(CaminosPC);
 
-    var suma = 0, ñ_8 = 0, guarda = [], Camiones = [], i = 0;
+    var suma = 0, ñ_8 = 0, guarda = [], Camiones = [];
 
     do {
         suma = suma + Pedidos1[ñ_8];
@@ -235,9 +235,9 @@ function main(Pedidos_1, NombrePuntos_1, Puntos_1) {
                 lh = nq + 1;
             } while (lh < puntosA.length);
 
-            for (let i = 0; i < NombrePuntos1.length; i++) {
-                if (puntosA[segundo] == NombrePuntos1[i]) {
-                    var primerE = i;
+            for (let i_2 = 0; i_2 < NombrePuntos1.length; i_2++) {
+                if (puntosA[segundo] == NombrePuntos1[i_2]) {
+                    var primerE = i_2;
                 }
             }
             tramo.push(CaminosEP[primerE]);
