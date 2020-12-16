@@ -2,8 +2,39 @@ var Puntos = [[1, -6], [-15, 35], [90, 8], [7, 7], [11, -8]];
 var Centros = [[0, 1], [41, 36], [1, 8]];
 var Pedidos = [700, 50, 990, 740, 850];
 
-var TamPunt = Puntos.length;
-console.log(TamPunt);
+// var TamPunt = Puntos.length;
+// console.log(TamPunt);
+
+// Crea los recuadros para ingresar puntos
+var InputFields = function() {
+    var div = document.createElement("div");
+    document.getElementById('inputfield').appendChild(div);
+    // Set div ID: Trans+#n
+    div.setAttribute("id", "Trans" + document.getElementById('inputfield').childElementCount);
+    div.setAttribute("style", "padding-bottom:20px; display:flex; justify-content:space-around; align-items:center;");
+
+    // Set texto descripcion
+    var textd = document.createElement("p");
+    textd.setAttribute("style", "color:white;");
+    textd.textContent = "ingrese punto";
+
+    // Set inputs: inicio
+    var inicio = document.createElement("input")
+    inicio.setAttribute("id", "inicio" + document.getElementById('inputfield').childElementCount);
+    inicio.setAttribute("type","text");
+    inicio.setAttribute("placeholder", "Inicio");
+    inicio.setAttribute("style", "width:120px;background:white; height:25px; border:none; border-bottom: 2px solid #00c896;");
+
+    // Append childs
+    div.appendChild(textd);
+    div.appendChild(inicio);
+};
+function dynamicInputs(){
+    for (let index = 0; index < Puntos.length; index++) {
+        InputFields();
+    }
+}
+dynamicInputs();
 
 var Estacionamiento = [0, 0];
 
@@ -276,6 +307,45 @@ function main(Pedidos_1, NombrePuntos_1, Puntos_1) {
     console.log(TamRutas);
     console.log(Rutas);
 
+}
+
+function printResultado() {
+    var printInPage = document.getElementById('resultadoHTML');
+    printInPage.innerHTML = '';
+
+    var cantidadCamiones = document.createElement("p");
+    cantidadCamiones.setAttribute("style","color:var(--accent); font-size: 18px; padding-top: 20px;")
+    cantidadCamiones.innerHTML = "La cantidad de camiones necesarias para el día es: ";
+
+    printInPage.appendChild(cantidadCamiones);
+
+    for (let index = 0; index < 3; index++) {
+        // Imprime el nombre del camion
+        var nombreCamion = document.createElement("p");
+        nombreCamion.setAttribute("style","font-size: 14px; padding-top: 40px;")
+        nombreCamion.innerHTML = "Camion numero ..";
+
+        // Imprime su informacion contenida en "informacionCamion"
+        var informacionCamion = document.createElement("p");
+        informacionCamion.setAttribute("style", "margin-left: 45px;")
+        
+        var direccionCamion1 = document.createElement("p");
+        direccionCamion1.innerHTML = "Sale del estacionamiento hacia -- ; Distancia: --";
+        var direccionCamion2 = document.createElement("p");
+        direccionCamion2.innerHTML = "Luego fue al punto de venta -- ; Distancia: --";
+        var direccionCamion3 = document.createElement("p");
+        direccionCamion3.innerHTML = "Y luego se devolvio al estacionamiento ; Distancia: --";
+        var direccionCamion4 = document.createElement("p");
+        direccionCamion4.innerHTML = "La cantidad recorrida total es -- ; Distancia: --";
+        
+        // Append Childs
+        informacionCamion.appendChild(direccionCamion1);
+        informacionCamion.appendChild(direccionCamion2);
+        informacionCamion.appendChild(direccionCamion3);
+        informacionCamion.appendChild(direccionCamion4);
+        printInPage.appendChild(nombreCamion);
+        printInPage.appendChild(informacionCamion);
+    }
 }
 
 main(Pedidos, NombrePuntos, Puntos);
