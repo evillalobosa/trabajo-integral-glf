@@ -53,28 +53,28 @@ p {
     background-size: 100% 100px;
 }
 .wave.wave1 {
-    animation: animate 30s linear infinite;
+    animation: animate 15s linear infinite;
     z-index: 10;
     opacity: 1;
     animation-delay: 0s;
     bottom: 0;
 }
 .wave.wave2 {
-    animation: animate2 15s linear infinite;
+    animation: animate2 5s linear infinite;
     z-index: 9;
     opacity: 0.5;
     animation-delay: -5s;
     bottom: 10px;
 }
 .wave.wave3 {
-    animation: animate 30s linear infinite;
+    animation: animate 20s linear infinite;
     z-index: 8;
     opacity: 0.2;
     animation-delay: -2s;
     bottom: 15px;
 }
 .wave.wave4 {
-    animation: animate2 30s linear infinite;
+    animation: animate2 20s linear infinite;
     z-index: 7;
     opacity: 0.7;
     animation-delay: -5s;
