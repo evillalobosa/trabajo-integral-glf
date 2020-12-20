@@ -163,7 +163,6 @@ function separa_Datos(contenido_y) {
             }
         }
         centro_el_final.push(mete_punto_8);
-        mete_punto_8 = [];
         ñm_8++;
     } while (ñm_8 < centros_pasantia.length);
 
@@ -203,8 +202,8 @@ var InputFields = function () {
 
 function creaPedidos() {
     var pedido_listo = [];
-    for (i = 1; i <= Puntos.length; i++) {
-        var pedido_ingreso = document.getElementById("Npedidos" + i).value;
+    for (let i_90 = 1; i_90 <= Puntos.length; i_90++) {
+        var pedido_ingreso = document.getElementById("Npedidos" + i_90).value;
         pedido_ingreso = parseInt(pedido_ingreso);
         if (isNaN(pedido_ingreso) == true) {
             alert("No ingreso todos los valores correctamente, vuelva a ingresar el archivo.");
@@ -549,19 +548,19 @@ function printResultado() {
             printInPage.appendChild(informacionCamion);
         } else {
             if (Tamano_Resultado[index] > 1) {
-                var nombreCamion = document.createElement("p");
-                nombreCamion.setAttribute("style", "font-size: 14px; padding-top: 40px;")
-                nombreCamion.innerHTML = "Camion numero " + (index + 1);
+                var nombreCamion_2 = document.createElement("p");
+                nombreCamion_2.setAttribute("style", "font-size: 14px; padding-top: 40px;")
+                nombreCamion_2.innerHTML = "Camion numero " + (index + 1);
 
                 // Imprime su informacion contenida en "informacionCamion"
-                var informacionCamion = document.createElement("p");
-                informacionCamion.setAttribute("style", "margin-left: 45px;")
+                var informacionCamion_2 = document.createElement("p");
+                informacionCamion_2.setAttribute("style", "margin-left: 45px;")
 
-                var direccionCamion1 = document.createElement("p");
-                direccionCamion1.innerHTML = "Sale del estacionamiento hacia " + Rutas_Resultado[index][0][2] + " (Distancia: " + Rutas_Resultado[index][0][1] + " kms.).";
-                var direccionCamion2 = document.createElement("p");
-                var ruta_puntos = crea_palabra();
-                function crea_palabra() {
+                var direccionCamion1_2 = document.createElement("p");
+                direccionCamion1_2.innerHTML = "Sale del estacionamiento hacia " + Rutas_Resultado[index][0][2] + " (Distancia: " + Rutas_Resultado[index][0][1] + " kms.).";
+                var direccionCamion2_2 = document.createElement("p");
+                var ruta_puntos_2 = crea_palabra_2();
+                function crea_palabra_2() {
                     var palabra = "Luego se dirige a ";
                     var paseando = 4;
                     do {
@@ -572,19 +571,19 @@ function printResultado() {
                     palabra_2 = palabra_2 + "."
                     return palabra_2;
                 }
-                direccionCamion2.innerHTML = ruta_puntos;
-                var distancia_estacionamiento = Rutas_Resultado[index][0].length - 2;
-                var direccionCamion3 = document.createElement("p");
-                direccionCamion3.innerHTML = "Y por ultimo se devuelve al estacionamiento (Distancia: " + Rutas_Resultado[index][0][distancia_estacionamiento] + " kms.).";
-                var direccionCamion4 = document.createElement("p");
-                direccionCamion4.innerHTML = "La cantidad recorrida total es " + Recorrido_Resultado[index] + " kms.";
+                direccionCamion2_2.innerHTML = ruta_puntos_2;
+                var distancia_estacionamiento_2 = Rutas_Resultado[index][0].length - 2;
+                var direccionCamion3_2 = document.createElement("p");
+                direccionCamion3_2.innerHTML = "Y por ultimo se devuelve al estacionamiento (Distancia: " + Rutas_Resultado[index][0][distancia_estacionamiento_2] + " kms.).";
+                var direccionCamion4_2 = document.createElement("p");
+                direccionCamion4_2.innerHTML = "La cantidad recorrida total es " + Recorrido_Resultado[index] + " kms.";
                 // Append Childs
-                informacionCamion.appendChild(direccionCamion1);
-                informacionCamion.appendChild(direccionCamion2);
-                informacionCamion.appendChild(direccionCamion3);
-                informacionCamion.appendChild(direccionCamion4);
-                printInPage.appendChild(nombreCamion);
-                printInPage.appendChild(informacionCamion);
+                informacionCamion.appendChild(direccionCamion1_2);
+                informacionCamion.appendChild(direccionCamion2_2);
+                informacionCamion.appendChild(direccionCamion3_2);
+                informacionCamion.appendChild(direccionCamion4_2);
+                printInPage.appendChild(nombreCamion_2);
+                printInPage.appendChild(informacionCamion_2);
             }
         }
     }
