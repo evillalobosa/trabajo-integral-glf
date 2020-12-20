@@ -605,7 +605,7 @@ function printResultado() {
 
     var reloadText= document.createElement('span');
     reloadText.setAttribute("class","link-text")
-    reloadText.textContent="¿Desea ingresar otro dia?";
+    reloadText.textContent="¿Desea ingresar otro día?";
 
     reloadButton.appendChild(reloadIcon);
     reloadButton.appendChild(reloadText);
