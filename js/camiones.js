@@ -211,8 +211,8 @@ function creaPedidos() {
             return false;
         } else {
             if (pedido_ingreso > 1000 || pedido_ingreso < 0) {
-                alert("El valor ingresado en el pedido del Punto de Venta " + i + " es mayor a 1000 o menor que cero, vuelva a ingresar el archivo.");
-                console.error("El valor ingresado en el pedido del Punto de Venta " + i + " es mayor a 1000 o menor que cero, vuelva a ingresar el archivo.");
+                alert("El valor ingresado en el pedido del Punto de Venta " + i_90 + " es mayor a 1000 o menor que cero, vuelva a ingresar el archivo.");
+                console.error("El valor ingresado en el pedido del Punto de Venta " + i_90 + " es mayor a 1000 o menor que cero, vuelva a ingresar el archivo.");
                 location.reload();
                 return false;
             } else {
@@ -514,10 +514,15 @@ function printResultado() {
     var printInPage = document.getElementById('resultadoHTML');
     printInPage.innerHTML = '';
 
+    var tituloResultado = document.getElementById('resultado-camion');
+    tituloResultado.setAttribute("class","descripcion-title");
+    tituloResultado.innerHTML= "Resultado de la operación";
+
     var cantidadCamiones = document.createElement("p");
     cantidadCamiones.setAttribute("style", "color:var(--accent); font-size: 18px; padding-top: 20px;")
     cantidadCamiones.innerHTML = "La cantidad de camiones necesarias para el día es: " + Rutas_Resultado.length;
 
+    printInPage.appendChild(tituloResultado);
     printInPage.appendChild(cantidadCamiones);
 
     for (let index = 0; index < Rutas_Resultado.length; index++) {
@@ -525,7 +530,7 @@ function printResultado() {
             // Imprime el nombre del camion
             var nombreCamion = document.createElement("p");
             nombreCamion.setAttribute("style", "font-size: 14px; padding-top: 40px;")
-            nombreCamion.innerHTML = "Camion numero " + (index + 1);
+            nombreCamion.innerHTML = "Camión numero " + (index + 1);
 
             // Imprime su informacion contenida en "informacionCamion"
             var informacionCamion = document.createElement("p");
@@ -550,7 +555,7 @@ function printResultado() {
             if (Tamano_Resultado[index] > 1) {
                 var nombreCamion_2 = document.createElement("p");
                 nombreCamion_2.setAttribute("style", "font-size: 14px; padding-top: 40px;")
-                nombreCamion_2.innerHTML = "Camion numero " + (index + 1);
+                nombreCamion_2.innerHTML = "Camión numero " + (index + 1);
 
                 // Imprime su informacion contenida en "informacionCamion"
                 var informacionCamion_2 = document.createElement("p");
@@ -587,6 +592,24 @@ function printResultado() {
             }
         }
     }
+    // Crea el boton para recargar la pagina
+    var reloadHTML= document.getElementById('reload-page');
+    reloadHTML.innerHTML='';
+
+    var reloadButton= document.createElement('button');
+    reloadButton.setAttribute("class","boton-reload");
+    reloadButton.setAttribute("onclick","location.reload()");
+
+    var reloadIcon= document.createElement('img');
+    reloadIcon.setAttribute("src","icons/refresh.svg")
+
+    var reloadText= document.createElement('span');
+    reloadText.setAttribute("class","link-text")
+    reloadText.textContent="¿Desea ingresar otro dia?";
+
+    reloadButton.appendChild(reloadIcon);
+    reloadButton.appendChild(reloadText);
+    reloadHTML.appendChild(reloadButton);
 }
 
 
