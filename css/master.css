@@ -97,17 +97,25 @@ p {
     }
 }
 
+.subir-archivo {
+    margin-top: 50px;
+    text-align: center;
+}
+
 /* INPUT SECTION  */
+.inputs-wrap {
+    height: 75%;
+    overflow: auto;
+}
 .dynamic-input-wrap {
     width: 100%;
     height: 26vw;
-    padding: 5% 0px;
+    padding: 10% 0px;
     display: flex;
     justify-content: space-around;
 }
 
 .input-descripcion {
-    margin-top: 35px;
     width: 30%;
 }
 .descripcion-title{
@@ -125,7 +133,7 @@ p {
 .relleno-datos {
     background-color: var(--accent);
     border-radius: 4px;
-    padding: 40px 0px;
+    padding: 20px 0px 40px 0px;
     width: 35%;
     height: 90%;
     position: relative;
@@ -191,7 +199,7 @@ p {
 
 /* RESULTADO  */
 .resultado-op {
-    margin-top: 50px;
+    margin-top: 6vw;
     width: 100%;
 }
 #resultadoHTML {
@@ -199,5 +207,27 @@ p {
 }
 .footer {
     width: 100%;
-    height: 10vw;
+    height: 15vw;
+    position: relative;
+}
+.link-github {
+    position: absolute;
+    top: 60%;
+    left: 8%;
+    display: flex;
+    height: 50px;
+    width: 110px;
+    text-align: center;
+    align-items: center;
+}
+.link-github-text {
+    color: var(--accent);
+    margin-left: 10px;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+.link-github-icon {
+    height: 30px;
+    width: 30px;
 }
